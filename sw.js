@@ -9,7 +9,7 @@
 // if (navigator.serviceWorker) {
   if ('serviceWorker' in navigator) { 
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js', {scope: '/'})
+        navigator.serviceWorker.register('/sw.js', {scope: '/road-rush'})
           .then(registration => {
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }).catch(err => {
