@@ -1,10 +1,8 @@
 /*
 	We only need to modify 2 places:
-		1. version
+		1. cacheName
 		2. filesToCache
 */
-
-const version = '1.0'; /* Name your cache  */
 
 // register service worker
 // if service worker API is available
@@ -20,6 +18,7 @@ const version = '1.0'; /* Name your cache  */
     });
   }
   
+  const cacheName = 'roadrush-v1'; /* Name your cache  */
   const filesToCache = [				 /* Files you wan to store in cache */
     '/',
     '/index.html',
@@ -85,8 +84,7 @@ const version = '1.0'; /* Name your cache  */
   self.addEventListener('activate', e => {
     let cachecleaned = caches.keys().then(keys => {
       keys.forEach(key => {
-        if(key !== `road-rush: v${version}` && key.match(`road-rush: v`)) 
-          return caches.delete(key)
+        if(key !== cacheName) return caches.delete(key)
       })
     })
   })
@@ -95,13 +93,12 @@ const version = '1.0'; /* Name your cache  */
   self.addEventListener('install', e => {
     console.log('sw install');
     e.waitUntil(
-      caches.open(`road-rush: v${version}`)
-        .then(function(cache) {
-          console.log('sw caching files');
-          return cache.addAll(filesToCache);
-        }).catch(err => {
-          console.log(err);
-        })
+      caches.open(cacheName).then(function(cache) {
+        console.log('sw caching files');
+        return cache.addAll(filesToCache);
+      }).catch(err => {
+        console.log(err);
+      })
     );
   });
   
@@ -112,17 +109,16 @@ const version = '1.0'; /* Name your cache  */
 
     // 4. Cache with Network Update : 
     e.respondWith(
-      caches.open(`road-rush: v${version}`)
-        .then(cache => {
-          return cache.match(e.request).then(res => {
-            let updateRes = fetch(e.request).then(newRes => {
-              cache.put(e.request, newRes.clone())
-              return newRes
+      caches.open(cacheName).then(cache => {
+        return cache.match(e.request).then(res => {
+          let updateRes = fetch(e.request).then(newRes => {
+            cache.put(e.request, newRes.clone())
+            return newRes
           })
           return res || updateRes
         })
       })
     )
-  });
+   });
   
   
