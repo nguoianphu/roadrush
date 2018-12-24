@@ -9,7 +9,7 @@
 // if (navigator.serviceWorker) {
   if ('serviceWorker' in navigator) { 
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js', {scope: '/road-rush'})
+        navigator.serviceWorker.register('/sw.js', {scope: '/'})
           .then(registration => {
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }).catch(err => {
@@ -18,74 +18,74 @@
     });
   }
   
-  const cacheName = 'roadrush-v1'; /* Name your cache  */
+  const version = '1.5'; /* Name your cache  */
   const filesToCache = [				 /* Files you wan to store in cache */
     '/',
-    '/road-rush/index.html',
-    '/road-rush/audio/boom.mp3',
-    '/road-rush/audio/boom.ogg',
-    '/road-rush/audio/random-race.mp3',
-    '/road-rush/audio/random-race.ogg',
-    '/road-rush/audio/whoosh.mp3',
-    '/road-rush/audio/whoosh.ogg',
-    '/road-rush/images/ui/buttons/1/1.png',
-    '/road-rush/images/ui/buttons/1/2.png',
-    '/road-rush/images/ui/buttons/1/3.png',
-    '/road-rush/images/ui/buttons/1/4.png',
-    '/road-rush/images/ui/buttons/1/5.png',
-    '/road-rush/images/ui/buttons/1/6.png',
-    '/road-rush/images/ui/buttons/2/1.png',
-    '/road-rush/images/ui/buttons/2/2.png',
-    '/road-rush/images/ui/buttons/2/3.png',
-    '/road-rush/images/ui/buttons/2/4.png',
-    '/road-rush/images/ui/buttons/2/5.png',
-    '/road-rush/images/ui/buttons/2/6.png',
-    '/road-rush/images/ui/icons/music_off.png',
-    '/road-rush/images/ui/icons/music_on.png',
-    '/road-rush/images/ui/icons/sfx_off.png',
-    '/road-rush/images/ui/icons/sfx_on.png',
-    '/road-rush/images/ui/toggles/1.png',
-    '/road-rush/images/ui/toggles/2.png',
-    '/road-rush/images/ui/toggles/3.png',
-    '/road-rush/images/ui/toggles/4.png',
-    '/road-rush/images/ui/toggles/5.png',
-    '/road-rush/images/ui/toggles/6.png',
-    '/road-rush/images/barrier.png',
-    '/road-rush/images/cars.png',
-    '/road-rush/images/cone.png',
-    '/road-rush/images/line.png',
-    '/road-rush/images/pcar1.png',
-    '/road-rush/images/pcar2.png',
-    '/road-rush/images/road.jpg',
-    '/road-rush/images/title.png',
-    '/road-rush/images/titleBack.jpg',
-    '/road-rush/js/classes/comps/bar.js',
-    '/road-rush/js/classes/comps/scoreBox.js',
-    '/road-rush/js/classes/mc/controller.js',
-    '/road-rush/js/classes/mc/model.js',
-    '/road-rush/js/classes/ui/flatButtons.js',
-    '/road-rush/js/classes/ui/soundButtons.js',
-    '/road-rush/js/classes/ui/toggleButton.js',
-    '/road-rush/js/classes/util/align.js',
-    '/road-rush/js/classes/util/alignGrid.js',
-    '/road-rush/js/classes/util/collision.js',
-    '/road-rush/js/classes/util/mediaManager.js',
-    '/road-rush/js/classes/road.js',
-    '/road-rush/js/classes/scenes/sceneLoad.js',
-    '/road-rush/js/classes/scenes/sceneMain.js',
-    '/road-rush/js/classes/scenes/sceneOver.js',
-    '/road-rush/js/classes/scenes/sceneTitle.js',
-    '/road-rush/js/constants.js',
-    '/road-rush/js/main.js',
-    '/road-rush/js/phaser.min.js',
-    '/road-rush/sw.js'
+    '/index.html',
+    '/audio/boom.mp3',
+    '/audio/boom.ogg',
+    '/audio/random-race.mp3',
+    '/audio/random-race.ogg',
+    '/audio/whoosh.mp3',
+    '/audio/whoosh.ogg',
+    '/images/ui/buttons/1/1.png',
+    '/images/ui/buttons/1/2.png',
+    '/images/ui/buttons/1/3.png',
+    '/images/ui/buttons/1/4.png',
+    '/images/ui/buttons/1/5.png',
+    '/images/ui/buttons/1/6.png',
+    '/images/ui/buttons/2/1.png',
+    '/images/ui/buttons/2/2.png',
+    '/images/ui/buttons/2/3.png',
+    '/images/ui/buttons/2/4.png',
+    '/images/ui/buttons/2/5.png',
+    '/images/ui/buttons/2/6.png',
+    '/images/ui/icons/music_off.png',
+    '/images/ui/icons/music_on.png',
+    '/images/ui/icons/sfx_off.png',
+    '/images/ui/icons/sfx_on.png',
+    '/images/ui/toggles/1.png',
+    '/images/ui/toggles/2.png',
+    '/images/ui/toggles/3.png',
+    '/images/ui/toggles/4.png',
+    '/images/ui/toggles/5.png',
+    '/images/ui/toggles/6.png',
+    '/images/barrier.png',
+    '/images/cars.png',
+    '/images/cone.png',
+    '/images/line.png',
+    '/images/pcar1.png',
+    '/images/pcar2.png',
+    '/images/road.jpg',
+    '/images/title.png',
+    '/images/titleBack.jpg',
+    '/js/classes/comps/bar.js',
+    '/js/classes/comps/scoreBox.js',
+    '/js/classes/mc/controller.js',
+    '/js/classes/mc/model.js',
+    '/js/classes/ui/flatButtons.js',
+    '/js/classes/ui/soundButtons.js',
+    '/js/classes/ui/toggleButton.js',
+    '/js/classes/util/align.js',
+    '/js/classes/util/alignGrid.js',
+    '/js/classes/util/collision.js',
+    '/js/classes/util/mediaManager.js',
+    '/js/classes/road.js',
+    '/js/classes/scenes/sceneLoad.js',
+    '/js/classes/scenes/sceneMain.js',
+    '/js/classes/scenes/sceneOver.js',
+    '/js/classes/scenes/sceneTitle.js',
+    '/js/constants.js',
+    '/js/main.js',
+    '/js/phaser.min.js',
+    '/sw.js'
   ];
   
   // delete previous caches
   self.addEventListener('activate', e => {
     let cachecleaned = caches.keys().then(keys => {
       keys.forEach(key => {
-        if(key !== cacheName) return caches.delete(key)
+        if(key !== `road-rush : v${version}` && key.match(`road-rush : v`)) return caches.delete(key)
       })
     })
   })
@@ -94,7 +94,7 @@
   self.addEventListener('install', e => {
     console.log('sw install');
     e.waitUntil(
-      caches.open(cacheName).then(function(cache) {
+      caches.open(`road-rush : v${version}`).then(function(cache) {
         console.log('sw caching files');
         return cache.addAll(filesToCache);
       }).catch(err => {
@@ -110,7 +110,7 @@
 
     // 4. Cache with Network Update : 
     e.respondWith(
-      caches.open(cacheName).then(cache => {
+      caches.open(`road-rush : v${version}`).then(cache => {
         return cache.match(e.request).then(res => {
           let updateRes = fetch(e.request).then(newRes => {
             cache.put(e.request, newRes.clone())
