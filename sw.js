@@ -9,7 +9,7 @@
 // if (navigator.serviceWorker) {
   if ('serviceWorker' in navigator) { 
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/road-rush/sw.js', {scope: '/road-rush/'})
+        navigator.serviceWorker.register('/sw.js', {scope: '/road-rush'})
           .then(registration => {
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }).catch(err => {
@@ -20,7 +20,7 @@
   
   const cacheName = 'roadrush-v1'; /* Name your cache  */
   const filesToCache = [				 /* Files you wan to store in cache */
-    '/road-rush/',
+    '/',
     '/road-rush/index.html',
     '/road-rush/audio/boom.mp3',
     '/road-rush/audio/boom.ogg',
