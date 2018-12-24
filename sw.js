@@ -44,12 +44,12 @@
     '/images/ui/icons/music_on.png',
     '/images/ui/icons/sfx_off.png',
     '/images/ui/icons/sfx_on.png',
-    '/images/toggles/1.png',
-    '/images/toggles/2.png',
-    '/images/toggles/3.png',
-    '/images/toggles/4.png',
-    '/images/toggles/5.png',
-    '/images/toggles/6.png',
+    '/images/ui/toggles/1.png',
+    '/images/ui/toggles/2.png',
+    '/images/ui/toggles/3.png',
+    '/images/ui/toggles/4.png',
+    '/images/ui/toggles/5.png',
+    '/images/ui/toggles/6.png',
     '/images/barrier.png',
     '/images/cars.png',
     '/images/cone.png',
@@ -65,7 +65,7 @@
     '/js/classes/mc/model.js',
     '/js/classes/ui/flatButtons.js',
     '/js/classes/ui/soundButtons.js',
-    '/js/classes/ui/toggleButtons.js',
+    '/js/classes/ui/toggleButton.js',
     '/js/classes/util/align.js',
     '/js/classes/util/alignGrid.js',
     '/js/classes/util/collision.js',
@@ -78,6 +78,7 @@
     '/js/constants.js',
     '/js/main.js',
     '/js/phaser.min.js',
+    '/sw.js'
   ];
   
   // delete previous caches
