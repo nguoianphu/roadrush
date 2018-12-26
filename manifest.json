@@ -5,7 +5,7 @@
   "background_color": "#ffffff",
   "display": "fullscreen",
   "orientation": "portrait",
-  "start_url": "/roadrush/",
+  "start_url": "/road-rush/",
   "icons": [
     {
       "src": "./images/icons/icon-72x72.png",
