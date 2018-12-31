@@ -1,11 +1,11 @@
 # road-rush
----
+
 ## a car game made with Phaser 3 framework
 
 # HTML/CSS快速入門
 ## html中結構與元素
 > 概要: h1-h6 p ul list a span
-![] (https://i.imgur.com/X5uZT7n.png)
+
 ### 重點
 ```javascript=
 var i = 1
